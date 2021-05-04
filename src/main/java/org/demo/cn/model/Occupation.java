@@ -2,6 +2,7 @@ package org.demo.cn.model;
 
 import org.springframework.stereotype.Component;
 
+//组件
 	@Component
 	public class Occupation {
 		

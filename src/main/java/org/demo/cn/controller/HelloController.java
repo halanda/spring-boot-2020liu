@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class HelloController {
+	//注入，只能注入一个
 @Autowired
 private Occupation occupation;
 	@GetMapping("/hello")
