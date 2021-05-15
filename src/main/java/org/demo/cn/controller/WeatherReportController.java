@@ -2,6 +2,7 @@ package org.demo.cn.controller;
 
 import org.demo.cn.model.City;
 import org.demo.cn.pojo.Response;
+import org.demo.cn.serivce.RemoteDataService;
 import org.demo.cn.serivce.WeatherResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +16,13 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/report")
-
 @Api(tags = "WeatherReportController Interface")
 public class WeatherReportController {
 
 	@Autowired
 	private WeatherResponseService weatherResponseService;
+	@Autowired
+	private RemoteDataService remoteDataService;
 	/**
 	 * http://localhost:8080/report/id/101070101
 	 * @param cityid
