@@ -1,7 +1,7 @@
 package org.demo.cn.model;
 
 public class Notice {
-
+	
 	private int id;
 	private String ganmao;
 	private String wendu;
@@ -31,4 +31,6 @@ public class Notice {
 		this.cid = cid;
 	}
 	
+	
+
 }

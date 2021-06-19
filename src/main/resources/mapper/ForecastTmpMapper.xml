@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 
+  	namespace: mapper interface name
+  	id: fucntion name
+  	resultType: return type
+   -->
+<mapper namespace="org.demo.cn.mapper.ForecastTmpMapper">
+
+  <!-- Integer insert(Forecast forecast); -->
+  <select id="insert" parameterType="org.demo.cn.model.Forecast">
+  	INSERT INTO forecast_tmp(id, DATE, high, fengli, low, fengxiang, TYPE, cid, day_order)
+  		values(null, #{date}, #{high}, #{fengli}, #{low}, #{fengxiang}, #{type}, #{cid}, #{day_order});
+  </select>
+    <!--updateFromTmpTable-->
+    <update id="updateFromTmpTable">
+        UPDATE
+        forecast,
+        forecast_tmp
+        SET
+        forecast.date =
+        CASE
+        WHEN forecast.date &lt;&gt; forecast_tmp.date
+        THEN forecast_tmp.date
+        ELSE forecast.date
+        END,
+        forecast.fengli =
+        CASE
+        WHEN forecast.fengli &lt;&gt; forecast_tmp.fengli
+        THEN forecast_tmp.fengli
+        ELSE forecast.fengli
+        END,
+        forecast.fengxiang =
+        CASE
+        WHEN forecast.fengxiang &lt;&gt; forecast_tmp.fengxiang
+        THEN forecast_tmp.fengxiang
+        ELSE forecast.fengxiang
+        END,
+        forecast.high =
+        CASE
+        WHEN forecast.high &lt;&gt; forecast_tmp.high
+        THEN forecast_tmp.high
+        ELSE forecast.high
+        END,
+        forecast.low =
+        CASE
+        WHEN forecast.low &lt;&gt; forecast_tmp.low
+        THEN forecast_tmp.low
+        ELSE forecast.low
+        END,
+        forecast.type =
+        CASE
+        WHEN forecast.type &lt;&gt; forecast_tmp.type
+        THEN forecast_tmp.type
+        ELSE forecast.type
+        END
+        WHERE forecast.cid = forecast_tmp.cid
+        AND forecast.day_order = forecast_tmp.day_order
+    </update>
+</mapper>

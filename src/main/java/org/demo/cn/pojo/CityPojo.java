@@ -16,4 +16,7 @@ public class CityPojo {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+	
+
 }

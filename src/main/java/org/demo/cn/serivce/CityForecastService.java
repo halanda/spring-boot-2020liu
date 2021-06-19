@@ -4,7 +4,7 @@ import org.demo.cn.model.CityForecast;
 
 public interface CityForecastService {
 
-	CityForecast getForecastWithCityByCityId(String cid);
+	CityForecast getForcastWithCityByCityId(String cid);
 	
 
 }

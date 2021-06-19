@@ -2,21 +2,25 @@ package org.demo.cn.model;
 
 import java.util.List;
 
+import org.demo.cn.model.Forecast;
+
 public class CityForecast {
 	
-	String c_name;
-	List<Forecast>forecastList;
-	public String getC_name() {
-		return c_name;
+	String city_name;
+	List<Forecast> forcastList;
+	public String getCity_name() {
+		return city_name;
 	}
-	public void setC_name(String c_name) {
-		this.c_name = c_name;
+	public void setCity_name(String city_name) {
+		this.city_name = city_name;
 	}
-	public List<Forecast> getForecastList() {
-		return forecastList;
+	public List<Forecast> getForcastList() {
+		return forcastList;
 	}
-	public void setForecastList(List<Forecast> forecastList) {
-		this.forecastList = forecastList;
+	public void setForcastList(List<Forecast> forcastList) {
+		this.forcastList = forcastList;
 	}
+	
+	
 
 }

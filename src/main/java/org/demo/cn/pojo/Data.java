@@ -2,8 +2,11 @@ package org.demo.cn.pojo;
 
 import java.util.List;
 
-public class Data {
+import org.demo.cn.pojo.ForecastPojo;
+import org.demo.cn.pojo.YesterdayPojo;
 
+public class Data {
+	
 	private YesterdayPojo yesterday;
 	private String city;
 	private List<ForecastPojo> forecast;
@@ -38,5 +41,8 @@ public class Data {
 	}
 	public void setWendu(String wendu) {
 		this.wendu = wendu;
-}
+	}
+	
+	
+
 }

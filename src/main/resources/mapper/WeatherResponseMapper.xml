@@ -37,8 +37,7 @@
 	f.`low` AS f_low, f.`fengxiang` AS f_fengxiang, f.`type` AS f_type,
 	n.`ganmao` AS n_ganmao, n.`wendu` AS n_wendu
 FROM yesterday yes, city c, forecast f, notice n
-<!--WHERE c.`id` = yes.`cid` AND c.`id` = f.`cid` AND c.`id` = n.`cid` AND c.`city_id` = #{city_id};-->
-<where> 
+	<where> 
 		c.`id` = yes.`cid` AND c.`id` = f.`cid` AND c.`id` = n.`cid`
 		<if test="city_id != null and city_id != ''">
 			and c.`city_id` = #{city_id}
@@ -47,6 +46,5 @@ FROM yesterday yes, city c, forecast f, notice n
 			and c.`city_name` = #{city_name}
 		</if>
 	</where>
-
-  </select>
+</select>
 </mapper>

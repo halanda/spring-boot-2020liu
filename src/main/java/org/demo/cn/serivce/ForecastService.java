@@ -1,20 +1,14 @@
 package org.demo.cn.serivce;
 
+import org.demo.cn.model.Forecast;
+import org.demo.cn.pojo.ForecastPojo;
+
 import java.util.List;
 
-import org.demo.cn.mapper.ForecastMapper;
-import org.demo.cn.model.Forecast;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+public interface ForecastService {
 
-@Service
-public class ForecastService {
+	List<Forecast> getForecastByCityId(String cid);
 
-	@Autowired
-	private ForecastMapper forecastMapper;
-	
-	List<Forecast> getForecastByCityId(String cid){
-		List<Forecast> forecastList = forecastMapper.getForecastByCityId(cid);
-		return forecastList;
-	}
+	void insert(List<ForecastPojo> list, Integer cityId, Boolean isTempTable);
 }
+

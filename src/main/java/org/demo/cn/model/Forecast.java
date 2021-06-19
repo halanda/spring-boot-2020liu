@@ -1,7 +1,23 @@
 package org.demo.cn.model;
 
+/**
+ * 
+ * @author thinkpad
+ *CREATE TABLE forecast(
+id INT AUTO_INCREMENT,
+`date` VARCHAR(20),
+high VARCHAR(20),
+fengli VARCHAR(20),
+low VARCHAR(20),
+fengxiang VARCHAR(20),
+`type` VARCHAR(20),
+cid INT NOT NULL,
+PRIMARY KEY (id),
+CONSTRAINT city_constraint FOREIGN KEY(cid) REFERENCES city (id)
+)
+ */
 public class Forecast {
-
+	
 	private Integer id;
 	private String date;
 	private String high;
@@ -9,7 +25,14 @@ public class Forecast {
 	private String low;
 	private String fengxiang;
 	private String type;
-	private String cid;
+	private Integer cid;
+	private Integer day_order;
+	public Integer getDay_order() {
+		return day_order;
+	}
+	public void setDay_order(Integer day_order) {
+		this.day_order = day_order;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -52,10 +75,13 @@ public class Forecast {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getCid() {
+	public Integer getCid() {
 		return cid;
 	}
-	public void setCid(String cid) {
+	public void setCid(Integer cid) {
 		this.cid = cid;
 	}
+	
+	
+
 }

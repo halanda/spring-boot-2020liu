@@ -1,7 +1,9 @@
 package org.demo.cn.model;
 
-public class CityNotice {
+import org.demo.cn.model.Notice;
 
+public class CityNotice {
+	
 	private int id;
 	private String city_id;
 	private String city_name;
@@ -40,4 +42,6 @@ public class CityNotice {
 		this.notice = notice;
 	}
 	
+	
+
 }

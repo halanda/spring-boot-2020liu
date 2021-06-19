@@ -9,20 +9,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/report")
 @Api(tags = "WeatherReportController Interface")
 public class WeatherReportController {
-
+	
 	@Autowired
 	private WeatherResponseService weatherResponseService;
+	
 	@Autowired
 	private RemoteDataService remoteDataService;
+	
 	/**
 	 * http://localhost:8080/report/id/101070101
 	 * @param cityid
@@ -32,7 +36,6 @@ public class WeatherReportController {
 	@ApiImplicitParams({
 		@ApiImplicitParam(name = "cityid", value = "national city id", required = true)
 	})
-	
 	@GetMapping("/id/{cityid}")
 	public Response getWeatherResponseByCityId(@PathVariable(name="cityid")String cityid) {
 		City city = new City();
@@ -49,13 +52,18 @@ public class WeatherReportController {
 	@ApiImplicitParams({
 		@ApiImplicitParam(name = "cityname", value = "national city name", required = true)
 	})
-	
 	@GetMapping("/name/{cityname}")
 	public Response getWeatherResponseByCityName(@PathVariable(name="cityname")String cityname) {
 		City city = new City();
 		city.setCity_name(cityname);
 		Response response = weatherResponseService.getWeatherResponse(city);
 		return response;
+	}
+
+	@GetMapping("/main")
+	public ModelAndView redirectMainPage(){
+		ModelAndView modelAndView = new ModelAndView("/page/main.html");
+		return modelAndView;
 	}
 	
 }

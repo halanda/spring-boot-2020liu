@@ -44,4 +44,7 @@ public class ForecastPojo {
 	public void setType(String type) {
 		this.type = type;
 	}
-	}
+	
+	
+
+}

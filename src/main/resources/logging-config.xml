@@ -36,12 +36,12 @@ true -->
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 添加.gz 历史日志会启用压缩 大大缩小日志文件所占空间 -->
             <!--<fileNamePattern>/home/log/stdout.log.%d{yyyy-MM-dd}.log</fileNamePattern>-->
-            <fileNamePattern>F:\log\stdout.log.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>D:/log/stdout.log.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory><!-- 保留 30 天日志 -->
         </rollingPolicy>
     </appender>
     <!--单个定义，需要指定哪个包输出日志-->
-    <logger name="logging.level.org.softcits.cn.mapper" level="DEBUG" />
+    <logger name="logging.level.org.demo.cn.mapper" level="DEBUG" />
 	<!--
 		如果root标签知道指定了日志级别，那么以根标签为准，没有则以当前追加器日志级别为准
 		如果root没有值，则默认是debug级别

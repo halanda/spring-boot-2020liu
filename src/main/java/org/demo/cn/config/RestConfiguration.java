@@ -2,7 +2,6 @@ package org.demo.cn.config;
 
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class RestConfiguration {
-
+	
 	@Autowired
 	private RestTemplateBuilder builder;
 
@@ -31,4 +30,3 @@ public class RestConfiguration {
 	}
 	
 }
-

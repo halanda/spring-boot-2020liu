@@ -1,7 +1,7 @@
 package org.demo.cn.model;
 
 public class Yesterday {
-
+	
 	private Integer id;
 	private String date;
 	private String high;
@@ -10,7 +10,6 @@ public class Yesterday {
 	private String fl;
 	private String type;
 	private int cid;
-	
 	public Integer getId() {
 		return id;
 	}
@@ -60,4 +59,6 @@ public class Yesterday {
 		this.cid = cid;
 	}
 	
+	
+
 }

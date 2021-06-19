@@ -1,8 +1,8 @@
 package org.demo.cn.serivce;
 
+import org.junit.jupiter.api.Test;
 import org.demo.cn.model.CityForecast;
 import org.demo.cn.model.Forecast;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,9 +14,9 @@ public class CityForecastServiceTest {
 	
 	@Test
 	public void getForcastWithCityByCityIdTest() {
-		CityForecast cityForecast = cityForecastService.getForecastWithCityByCityId("101070101");
-		System.out.println(cityForecast.getC_name());
-		for(Forecast forecast : cityForecast.getForecastList()) {
+		CityForecast cityForecast = cityForecastService.getForcastWithCityByCityId("101070101");
+		System.out.println(cityForecast.getCity_name());
+		for(Forecast forecast : cityForecast.getForcastList()) {
 			System.out.println(forecast.getId());
 			System.out.println(forecast.getDate());
 			System.out.println(forecast.getFengli());

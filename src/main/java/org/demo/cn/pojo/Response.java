@@ -1,6 +1,9 @@
 package org.demo.cn.pojo;
 
+import org.demo.cn.pojo.Data;
+
 public class Response {
+	
 	private Data data;
 	private String status;
 	private String desc;
@@ -23,4 +26,7 @@ public class Response {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	}
+	
+	
+
+}

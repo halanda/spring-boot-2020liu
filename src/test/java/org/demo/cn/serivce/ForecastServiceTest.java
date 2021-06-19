@@ -2,8 +2,8 @@ package org.demo.cn.serivce;
 
 import java.util.List;
 
-import org.demo.cn.model.Forecast;
 import org.junit.jupiter.api.Test;
+import org.demo.cn.model.Forecast;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,7 +16,8 @@ public class ForecastServiceTest {
 	public void getForecastByCityIdTest() {
 		List<Forecast> forecastList = forecastService.getForecastByCityId("1");
 		for(Forecast forecast : forecastList) {
-			System.out.println(forecast.getId() + "->" + forecast.getDate()+ "->" + forecast.getFengli() + "->" + forecast.getHigh() + "->" + forecast.getLow()+ "->" + forecast.getType() + "->" + forecast.getFengxiang() + "->" + forecast.getCid());
+			System.out.println(forecast.getId() + "->" + forecast.getDate() + "->" + forecast.getFengli() + "->" + forecast.getHigh() + "->" + forecast.getLow() + "->" + forecast.getType() + "->" + forecast.getFengxiang() + "->" + forecast.getCid());
 		}
 	}
+	
 }

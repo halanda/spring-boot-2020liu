@@ -1,6 +1,7 @@
 package org.demo.cn.pojo;
 
 public class AffectedNum {
+
 	/**
 	 * the num of data affected
 	 */
@@ -23,4 +24,6 @@ public class AffectedNum {
 	public void setDesp(String desp) {
 		this.desp = desp;
 	}
-}	
+	
+	
+}
