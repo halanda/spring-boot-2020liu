@@ -91,7 +91,7 @@ public class RemoteDataServiceImpl implements RemoteDataService {
 				yesterdayMapper.insert((Yesterday)obj);
 			}
 			else if(obj instanceof Notice){
-				cityNoticeTmpMapper.insert((Notice) obj);
+				cityNoticeMapper.insert((Notice) obj);
 			}
 		}
 

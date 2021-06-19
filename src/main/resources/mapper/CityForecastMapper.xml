@@ -13,7 +13,7 @@
                                    
 	
 	<result column="c_name" property="c_name"></result>
-	<collection property="forecastList" ofType="org.demo.cn.model.Forecast">
+	<collection property="forcastList" ofType="org.demo.cn.model.Forecast">
 		<id column="fs_id" property="id"></id>
 		<result column="fs_date" property="date"></result>
 		<result column="fs_high" property="high"></result>

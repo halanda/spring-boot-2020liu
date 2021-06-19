@@ -33,7 +33,7 @@ FROM city, notice
 WHERE city.id = notice.cid AND city.city_id = #{city_id}
   </select>
   <!-- Integer insert(Notice notice); -->
-  <select id="insert" parameterType="org.softcits.cn.model.Notice">
+  <select id="insert" parameterType="org.demo.cn.model.Notice">
   	insert into notice(id, ganmao, wendu, cid) values(null, #{ganmao}, #{wendu}, #{cid});
   </select>
  
