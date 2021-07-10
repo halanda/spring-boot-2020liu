@@ -1,11 +1,32 @@
-@charset "UTF-8";
 .report_container{
+    display: inline-block;
+    margin-left: 218px;
+    width: 60%;
+}
+.report_container .report_wrapper{
+    width: 60%;
+    padding-left: 40px;
 }
 .report_container .report_notification{
-    height: 20px;
+    height: 25px;
+    overflow: hidden;
 }
 .report_container .report_wrapper_blocker{
     display: inline-block;
-    width: 20%;
+    width: 19%;
     height: 100%;
+}
+.report_wrapper .report_wrapper_blocker .report_wrapper_blocker_link p{
+    color: darkorange;
+}
+.search_container{
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 25px;
+}
+.search_container .cityList{
+    height: 219px;
+    width: 176px;
+    overflow-y: scroll;
 }

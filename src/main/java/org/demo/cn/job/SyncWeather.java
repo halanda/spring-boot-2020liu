@@ -15,7 +15,7 @@ public class SyncWeather extends QuartzJobBean {
 	protected void executeInternal(JobExecutionContext context)
 			throws JobExecutionException {
 		
-		syncWeatherData.synchronizeWeatherData();
+		//syncWeatherData.synchronizeWeatherData();
 
 	}
 
