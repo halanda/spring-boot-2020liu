@@ -1,10 +1,15 @@
 package org.demo.cn.controller;
 
+import java.util.List;
+
 import org.demo.cn.model.City;
 import org.demo.cn.pojo.Response;
+import org.demo.cn.serivce.CityService;
 import org.demo.cn.serivce.RemoteDataService;
 import org.demo.cn.serivce.WeatherResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +31,8 @@ public class WeatherReportController {
 	
 	@Autowired
 	private RemoteDataService remoteDataService;
+	@Autowired
+	private CityService cityService;
 	
 	/**
 	 * http://localhost:8080/report/id/101070101
@@ -65,5 +72,10 @@ public class WeatherReportController {
 		ModelAndView modelAndView = new ModelAndView("/page/main.html");
 		return modelAndView;
 	}
-	
+	@ApiOperation("Get all cities")
+	@GetMapping("/get/cities")
+	public ResponseEntity<List<City>> getAllCities(){
+		List<City> list = cityService.getAllCities();
+		return new ResponseEntity<List<City>>(list, HttpStatus.OK);
+	}
 }

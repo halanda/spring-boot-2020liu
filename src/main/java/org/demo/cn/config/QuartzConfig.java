@@ -1,13 +1,11 @@
 package org.demo.cn.config;
 
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.SimpleScheduleBuilder;
-import org.quartz.TriggerBuilder;
+import java.util.Date;
 import org.demo.cn.job.SyncWeather;
-import org.quartz.Trigger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.quartz.*;
+
 
 
 @Configuration
@@ -24,10 +22,12 @@ private static final int INTERVAL = 60 * 60;
 	//Trigger
 	@Bean
 	public Trigger weatherDataSyncTrigger() {
-		//每两秒执行
+		//多少秒之后执行
+		Date startTime = new Date(System.currentTimeMillis() + 1000 * 60 * 60);
+		//每一小时执行
 		SimpleScheduleBuilder schedBuilder = SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(INTERVAL).repeatForever();
 		return TriggerBuilder.newTrigger().forJob(weatherDataSyncJobDetail())
-				.withIdentity("weatherDataSyncTrigger").startNow().withSchedule(schedBuilder).build();
+				.withIdentity("weatherDataSyncTrigger").startAt(startTime).withSchedule(schedBuilder).build();
 	}
 
 
